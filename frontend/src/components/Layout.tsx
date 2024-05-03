@@ -45,10 +45,10 @@ const Layout = (props: { children: ReactNode }): JSX.Element => {
         }));
 
         makePayment(orderItems, "熊本高専八代キャンパス売店 - 会計デモ")
-            .then((response) => {
+            .then((response: any) => {
                 window.location.replace(response.data.data.url);
             })
-            .catch((error) => {
+            .catch((error: any) => {
                 console.error(error);
                 setModalMessage("会計中にエラーが発生しました。管理者に報告をお願いします。")
             });

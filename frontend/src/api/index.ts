@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { OrderItem } from "../@types";
 
-axios.defaults.baseURL = process.env.REACT_APP_DATABASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_DATABASE_URL || "";
 
 export const getCategories = () => {
     return axios.get(`/categories`);

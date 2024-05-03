@@ -12,7 +12,7 @@ const Selection = (): JSX.Element => {
 
     useEffect(() => {
         getItemsByCategoryId(id!)
-            .then((response) => {
+            .then((response: any) => {
                 setItems(response.data);
             });
     }, [id]);

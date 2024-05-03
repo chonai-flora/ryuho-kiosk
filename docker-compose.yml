@@ -17,7 +17,7 @@ services:
     container_name: backend
     build:
       context: ./backend
-      dockerfile: ./Dockerfile.backend
+      dockerfile: ./backend.Dockerfile
     volumes:
       - ./backend/app:/app
     ports:
@@ -32,12 +32,11 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: ./Dockerfile.frontend
-    command: [ "npm", "start" ]
+      dockerfile: ./frontend.Dockerfile
     volumes:
       - ./:/usr/src/app
     ports:
-      - 3000:3000
+      - 5173:5173
     env_file: ./frontend/.env
     tty: true
 

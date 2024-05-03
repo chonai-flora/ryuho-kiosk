@@ -10,7 +10,7 @@ const Navbar = (props: { totalItemCount: number }): JSX.Element => {
     return (
         <div className="navbar px-4 bg-red-300">
             <div className="flex-1">
-                <img src="https://kumamoto-nct.ac.jp/wp/wp-content/uploads/2010/06/kumamoto-nct_symbol_HR.png"
+                <img src="/kumamoto-nct_symbol_HR.png"
                     alt="kumamoto-nct_symbol_HR"
                     className="w-[30px] h-[30px] absolute"
                 />
@@ -20,7 +20,7 @@ const Navbar = (props: { totalItemCount: number }): JSX.Element => {
             </div>
 
 
-            <div role="tablist" className="flex-none tabs tabs-bordered">
+            <div role="tablist" className="flex-none tabs tabs-bordered gap-1">
                 {categories.map((category) => (
                     <Link
                         className={"tab border-gray-50 text-white " + (id === category.id && "tab-active")}
@@ -32,17 +32,6 @@ const Navbar = (props: { totalItemCount: number }): JSX.Element => {
                     </Link>
                 ))}
             </div>
-            {/* <div className="flex-none"> */}
-            {/* {categories.map((category) => (
-                    <Link
-                        className={"px-2 text-white " + (id === category.id && "font-bold")}
-                        to={`/cashier/${category.id}/`}
-                        key={category.id}
-                    >
-                        {category.name}
-                    </Link>
-                ))} */}
-            {/* </div> */}
 
             <div className="flex-none">
                 <label htmlFor="my-drawer" aria-label="open sidebar" className="btn btn-circle btn-ghost relative">

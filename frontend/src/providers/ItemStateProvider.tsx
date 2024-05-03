@@ -43,15 +43,15 @@ export const ItemStateProvider = (props: { children: ReactNode }) => {
 
     useEffect(() => {
         getCategories()
-            .then((response) => {
+            .then((response: any) => {
                 setCategories(response.data);
             })
-            .catch((error) => {
+            .catch((error: any) => {
                 console.error(`Error fetching categories: ${error}`);
             });
 
         getItems()
-            .then((response) => {
+            .then((response: any) => {
                 response.data = response.data.map((value: any) => ({
                     ...value,
                     category: value.category_id
@@ -62,7 +62,7 @@ export const ItemStateProvider = (props: { children: ReactNode }) => {
                 setItems(response.data);
                 setItemCountMap(initialMap);
             })
-            .catch((error) => {
+            .catch((error: any) => {
                 console.error(`Error fetching items: ${error}`);
             });
     }, []);
